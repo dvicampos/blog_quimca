@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <%- include("../partials/head") %>
+</head>
+    <body>
+        <%- include("../partials/header") %>
+        <div class="juego-ahorcado">
+            <h1>Juego ahorcado</h1>
+            <div>
+                <!-- Inicializamos canvas como contenedor -->
+                
+                <canvas id="canvas"></canvas>
+                <div id="usedLetters"></div>
+            </div>
+            <!-- Creamos contenedores de palabras, letras y boton de incio -->
+            <div id="usedLetters"></div>
+            <div id="wordContainer"></div>
+            <button id="startButton">Iniciar Juego</button>
+            <br />
+            <p style="color: whitesmoke; font-family: Arial, Helvetica, sans-serif;">Palabras correctas:</p>
+            <p style="color: whitesmoke; font-family: Arial, Helvetica, sans-serif;" id="ejemplo"></p>
+            <p style="color: whitesmoke; font-family: Arial, Helvetica, sans-serif;" id="puntaje"><strong></strong></p>
+        </div>
+    <!-- FOOTER -->
+    <script type="text/javascript" src="js/script.js" defer></script>
+    <%- include("../partials/footer") %>
+    </body>
+</html>

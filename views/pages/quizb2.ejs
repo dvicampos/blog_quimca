@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <%- include("../partials/head") %>
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+    }
+    .contenedorquiz{
+        max-width: 700px;
+        margin: auto;
+        padding: 20px;
+    }
+    section{
+        border: 2px solid #5624d0;
+        border-radius: 7px;
+        padding: 10px;
+        margin: 10px 0;
+    }
+    label{
+        display: block;
+        padding: 7px;
+        border-radius: 7px;
+        cursor: pointer;
+        border: 1px dashed #ccc;
+        margin-bottom: 3px;
+    }
+    label:hover{
+        background: #cec0fc;
+    }
+    button{
+        width: 80%;
+        display: block;
+        margin: auto;
+        padding: 10px;
+
+        background-color: #74d7c8;
+        border: none;
+        cursor: pointer;
+        border-radius: 20px;
+    }
+    button:hover{
+        background: #000;
+        color: #fff;
+    }
+    h2{
+        text-align: center;
+    }
+    #resultado{
+        font-size: 30px;
+        color: darkred;
+    }
+</style>
+    <body>
+        <%- include("../partials/header") %>
+        <h1>QUIZ BLOQUE 2</h1>
+        <p>Juego de Quimica</p>
+
+        <div class="contenedorquiz">
+            <section id="p0">
+                <h3>¿cuántos elementos hay en la tabla periódica?</h3>
+                <label>
+                    <input type="radio" value="1" name="p0" onclick="respuesta(0,this)">130
+                </label>
+                <label>
+                    <input type="radio" value="2" name="p0" onclick="respuesta(0,this)">118
+                </label>
+                <label>
+                    <input type="radio" value="3" name="p0" onclick="respuesta(0,this)">190
+                </label>
+            </section>
+
+            <section id="p1">
+                <h3>¿cómo calcularías la cantidad de neutrones en un elemento?</h3>
+                <label>
+                    <input type="radio" value="1" name="p1" onclick="respuesta(1,this)">La diferencia entre la fuerza y la energía
+                </label>
+                <label>
+                    <input type="radio" value="2" name="p1" onclick="respuesta(1,this)">La diferencia entre la masa atómica y el número atómico.
+                </label>
+                <label>
+                    <input type="radio" value="3" name="p1" onclick="respuesta(1,this)">El número atómico sobre la energías
+                </label>
+            </section>
+
+            <section id="p2">
+                <h3>¿cuáles son los gases nobles?</h3>
+                <label>
+                    <input type="radio" value="1" name="p2" onclick="respuesta(2,this)">Hidrógeno, Oxígeno, Bromo, Astato, Yodo
+                </label>
+                <label>
+                    <input type="radio" value="2" name="p2" onclick="respuesta(2,this)">Helio, neón, Argón, Xenón, Ranon, kriptón
+                </label>
+                <label>
+                    <input type="radio" value="3" name="p2" onclick="respuesta(2,this)">Flúor, Cloro,Astato, Yodo, Ranon 
+                </label>
+            </section>
+
+            <section id="p3">
+                <h3>¿con qué Valencia trabajan los elementos de la familia IA?</h3>
+                <label>
+                    <input type="radio" value="1" name="p3" onclick="respuesta(3,this)">Siempre con +5
+                </label>
+                <label>
+                    <input type="radio" value="2" name="p3" onclick="respuesta(3,this)">Siempre con +1
+                </label>
+                <label>
+                    <input type="radio" value="3" name="p3" onclick="respuesta(3,this)">Siempre con -1
+                </label>
+            </section>
+
+            <section id="p4">
+                <h3>¿Cuál es el formato para el símbolo de un elemento?</h3>
+                <label>
+                    <input type="radio" value="1" name="p4" onclick="respuesta(4,this)">2 letras y un símbolo, siendo la primera mayúscula y la segunda minúscula.
+                </label>
+                <label>
+                    <input type="radio" value="2" name="p4" onclick="respuesta(4,this)">Una letra mayúscula o 2 letras, siendo la primera mayúscula y la segunda minúscula.
+                </label>
+                <label>
+                    <input type="radio" value="3" name="p4" onclick="respuesta(4,this)">Una número romano y una letra, siendo la segunda minúscula.
+                </label>
+            </section>
+            <button onclick="corregir()">Corregir</button>
+            <h2>Cantidad <span id="resultado"></span></h2>
+        </div>
+
+        
+        <!-- FOOTER -->
+        <%- include("../partials/footer") %>
+
+        <script src="js/appQuizb2.js"></script>
+    </body>
+</html>

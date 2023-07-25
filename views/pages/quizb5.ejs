@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <%- include("../partials/head") %>
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+    }
+    .contenedorquiz{
+        max-width: 700px;
+        margin: auto;
+        padding: 20px;
+    }
+    section{
+        border: 2px solid #5624d0;
+        border-radius: 7px;
+        padding: 10px;
+        margin: 10px 0;
+    }
+    label{
+        display: block;
+        padding: 7px;
+        border-radius: 7px;
+        cursor: pointer;
+        border: 1px dashed #ccc;
+        margin-bottom: 3px;
+    }
+    label:hover{
+        background: #cec0fc;
+    }
+    button{
+        width: 80%;
+        display: block;
+        margin: auto;
+        padding: 10px;
+
+        background-color: #74d7c8;
+        border: none;
+        cursor: pointer;
+        border-radius: 20px;
+    }
+    button:hover{
+        background: #000;
+        color: #fff;
+    }
+    h2{
+        text-align: center;
+    }
+    #resultado{
+        font-size: 30px;
+        color: darkred;
+    }
+</style>
+    <body>
+        <%- include("../partials/header") %>
+        <h1>QUIZ BLOQUE 5</h1>
+        <p>Juego de Quimica</p>
+
+        <div class="contenedorquiz">
+            <section id="p0">
+                <h3>¿Cuál es el nombre del compuesto HCl?</h3>
+                <label>
+                    <input type="radio" value="1" name="p0" onclick="respuesta(0,this)">Ácido clorhídrico
+                </label>
+                <label>
+                    <input type="radio" value="2" name="p0" onclick="respuesta(0,this)">Cloruro de hidrógeno
+                </label>
+                <label>
+                    <input type="radio" value="3" name="p0" onclick="respuesta(0,this)">Hidróxido de cloro
+                </label>
+            </section>
+
+            <section id="p1">
+                <h3>¿Cuál es el nombre del compuesto NaCl?</h3>
+                <label>
+                    <input type="radio" value="1" name="p1" onclick="respuesta(1,this)">Nitrato de sodio
+                </label>
+                <label>
+                    <input type="radio" value="2" name="p1" onclick="respuesta(1,this)">Cloruro de sodio
+                </label>
+                <label>
+                    <input type="radio" value="3" name="p1" onclick="respuesta(1,this)">Sulfato de sodio
+                </label>
+            </section>
+
+            <section id="p2">
+                <h3>¿Cuál es el nombre del compuesto CaCO3?</h3>
+                <label>
+                    <input type="radio" value="1" name="p2" onclick="respuesta(2,this)">Carbonato de calcio
+                </label>
+                <label>
+                    <input type="radio" value="2" name="p2" onclick="respuesta(2,this)">Cloruro de calcio
+                </label>
+                <label>
+                    <input type="radio" value="3" name="p2" onclick="respuesta(2,this)">Sulfato de calcio
+                </label>
+            </section>
+
+            <section id="p3">
+                <h3>¿Cuál es el nombre del compuesto H2SO4?</h3>
+                <label>
+                    <input type="radio" value="1" name="p3" onclick="respuesta(3,this)">Ácido sulfúrico
+                </label>
+                <label>
+                    <input type="radio" value="2" name="p3" onclick="respuesta(3,this)">Sulfato de hidrógeno
+                </label>
+                <label>
+                    <input type="radio" value="3" name="p3" onclick="respuesta(3,this)">Hidróxido de sulfuro
+                </label>
+            </section>
+
+            <section id="p4">
+                <h3>¿Cuál es el nombre del compuesto NH4Cl?</h3>
+                <label>
+                    <input type="radio" value="1" name="p4" onclick="respuesta(4,this)">Amoniaco clorado
+                </label>
+                <label>
+                    <input type="radio" value="2" name="p4" onclick="respuesta(4,this)">Cloruro de amonio
+                </label>
+                <label>
+                    <input type="radio" value="3" name="p4" onclick="respuesta(4,this)">Nitrito de amonio
+                </label>
+            </section>
+            <button onclick="corregir()">Corregir</button>
+            <h2>Cantidad <span id="resultado"></span></h2>
+        </div>
+
+        
+        <!-- FOOTER -->
+        <%- include("../partials/footer") %>
+
+        <script src="js/appQuiz.js"></script>
+    </body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <%- include("../partials/head") %>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+</head>
+<style>
+    .main {
+    display: flex;
+}
+
+.columnaR {
+    flex: 22%;
+    border-radius: 10px;
+    padding: 10px;
+    padding-top: 10%;
+    margin-right: 10px;
+    background-color: #5f0340;
+}
+
+.columnaL{
+    flex: 77%;
+    border-radius: 10px;
+    padding: 10px;
+    margin-right: 10px;
+    background-color: #5f0340;
+}
+
+.panel{
+    width: 496px;
+    height: 496px;
+    margin: 0 auto;
+
+}
+
+.carta {
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin: 6px;
+    padding: 6px;
+    border: 4px solid #940865;
+    border-radius: 10px;
+    box-shadow: 0 1px 5px rgba(0,0,0,.5);
+    background: #B1B1B1;
+    z-index: 1;
+}
+
+#btnIniciar{
+    display: table;
+    margin: 0 auto;
+    background: #B1B1B1;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+    font-family: Trebuchet MS;
+    font-size: 20px;
+    cursor: pointer;
+
+}
+
+#btnIniciar:hover{
+    background: #999999;
+}
+
+.txtEstilo{
+    text-align: center;
+    font-weight: bold;
+    font-family: Trebuchet MS;
+    font-size: 20px;
+    color: white;
+}
+</style>
+<script>
+    $(document).ready(function () {
+
+var primeraCarta = "";
+var actualCarta = "";
+var auxId = "";
+var jugador1 = 0;
+var jugador2 = 0;
+var primerJugador = true;
+var segundoJugador = false;
+
+$("#btnIniciar").click(function () {
+
+    reiniciar();
+
+    var cartas = ["calcio", "calcio", "iron", "iron", "mercurio", "mercurio", "oro", "oro", "plata", "plata", "plomo", "plomo", "zinc", "zinc", "carbon", "carbon"];
+
+    $(".carta").css("cursor", "pointer");
+
+    $(".carta").hover(function () {
+        $(this).css("background", "#999999");
+    }, function () {
+        $(this).css("background", "#B1B1B1");
+    });
+
+    revolver(cartas);
+    console.log(cartas);
+
+    $(".carta").each(function (i) {
+        $(this).attr("id", "carta" + i);
+        $(this).append('<img width="80px" src="img/' + cartas[i] + '.jpeg">');
+        $("img").hide();
+    });
+});
+$(".carta").click(abrir);
+
+function revolver(arr) {
+    var random = 0;
+    var aux = 0;
+    for (i = 1; i < arr.length; i++) {
+        random = Math.round(Math.random() * i);
+        aux = arr[i];
+        arr[i] = arr[random];
+        arr[random] = aux;
+    }
+}
+
+function reiniciar() {
+    $(".carta").each(function () {
+        $(".carta img").remove();
+    });
+    primeraCarta = "";
+    actualCarta = "";
+    auxId = "";
+    $(".carta").css("visibility", "visible");
+    $(".carta").css("background", "#B1B1B1");
+    jugador1 = 0;
+    jugador2 = 0;
+    primerJugador = true;
+    segundoJugador = false;
+    $("#j1").text("");
+    $("#j2").text("");
+
+}
+
+function abrir() {
+    if (typeof ($(this).attr("id")) !== "undefined") {
+        var id = $(this).attr("id");
+
+        console.log($(this).attr("id"));
+
+        $("#" + id).hover(function () {
+            $(this).css("background", "#999999");
+        }, function () {
+            $(this).css("background", "#999999");
+        });
+
+        $("#" + id).css("cursor", "auto");
+        $("#" + id + " img").slideDown("fast");
+
+        if (primeraCarta === "") {
+            auxId = id;
+            primeraCarta = $("#" + id + " img").attr("src");
+        } else {
+            actualCarta = $("#" + id + " img").attr("src");
+            if (primeraCarta !== actualCarta) {
+                setTimeout(function () {
+                    $("#" + id + " img").slideUp('fast');
+                    $("#" + auxId + " img").slideUp('fast');
+                    auxId = "";
+                    primeraCarta = "";
+                }, 450, );
+
+                $("#" + id).hover(function () {
+                    $(this).css("background", "#999999");
+                }, function () {
+                    $(this).css("background", "#B1B1B1");
+                });
+
+                $("#" + auxId).css("background", "#B1B1B1");
+
+                $("#" + auxId).hover(function () {
+                    $(this).css("background", "#999999");
+                }, function () {
+                    $(this).css("background", "#B1B1B1");
+                });
+
+                $("#" + id).css("cursor", "pointer");
+                $("#" + auxId).css("cursor", "pointer");
+
+                if (primerJugador) {
+                    primerJugador = false;
+                    segundoJugador = true;
+                    console.log("Segundo");
+                } else if (segundoJugador) {
+                    segundoJugador = false;
+                    primerJugador = true;
+                    console.log("Primer");
+                }
+            } else {
+                setTimeout(function () {
+                    $("#" + id).css("visibility", "hidden");
+                    $("#" + auxId).css("visibility", "hidden");
+                    console.log(actualCarta);
+                    console.log(primeraCarta);
+                    primeraCarta = "";
+                    auxId = "";
+                }, 450);
+
+                if (primerJugador) {
+                    jugador1++;
+                    $("#j1").text(jugador1);
+                    console.log("Jugador 1: " + document.getElementById("j1").textContent);
+
+                } else if (segundoJugador) {
+                    jugador2++;
+                    $("#j2").text(jugador2);
+                    console.log("Jugador 2: " + document.getElementById("j2").textContent);
+
+                }
+            }
+        }
+        setTimeout(function () {
+            if (jugador1 + jugador2 === 8) {
+                if (jugador1 > jugador2) {
+                    alert("Haz ganado Jugador 1!!!\nApreta el boton: Iniciar Partida para comenzar de nuevo.");
+                } else if (jugador1 < jugador2) {
+                    alert("Haz ganado Jugador 2!!!\nApreta el boton: Iniciar Partida para comenzar de nuevo.");
+                } else if (jugador1 === jugador2) {
+                    alert("Ha sido un empate.\nApreta el boton: Iniciar Partida para comenzar de nuevo.");
+                }
+            }
+        }, 500);
+    }else {
+        alert("Aprete el boton: Iniciar Partida para comenzar!");
+    }
+}
+});
+</script>
+<body>
+    <%- include("../partials/header") %>
+    <div class="main">
+        <div class="columnaL">
+            <div class="panel">
+                <div class="carta"></div>
+                <div class="carta"></div>
+                <div class="carta"></div>
+                <div class="carta"></div>
+                <div class="carta"></div>
+                <div class="carta"></div>
+                <div class="carta"></div>
+                <div class="carta"></div>
+                <div class="carta"></div>
+                <div class="carta"></div>
+                <div class="carta"></div>
+                <div class="carta"></div>
+                <div class="carta"></div>
+                <div class="carta"></div>
+                <div class="carta"></div>
+                <div class="carta"></div>
+            </div>
+        </div>
+        <div class="columnaR" align="center">
+            <button id="btnIniciar">Iniciar Partida</button>
+            <p class="txtEstilo">Jugador 1: <span id="j1"></span></p>
+            <p class="txtEstilo">Jugador 2: <span id="j2"></span></p>
+        </div>
+    </div>
+    <!-- FOOTER -->
+    <%- include("../partials/footer") %>
+</body>
+</html>

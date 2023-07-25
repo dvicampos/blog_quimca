@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <%- include("../partials/head") %>
+</head>
+<body>
+    <%- include("../partials/header") %>
+    <h1 class="text-center text-success">Videos</h1>
+    <br />
+    <main>
+        <div class="container text-center">
+            <img src="img/l4.jpeg" width="100px">
+            <div class="row row-cols-3">
+            <!--VIDEO 1-->
+              <div class="col">
+                <video class="fm-video video-js vjs-16-9 vjs-big-play-centered" controls data-setup="{}" id="fm-video">
+
+                    <source src="videos/video1.mp4" type="video/mp4">
+                </video>
+        
+                <article>
+                    <h2>Bloque 1</h2>
+                    <p>La química es una herramienta crucial en la vida cotidiana. Nos permite entender cómo funciona el mundo que nos rodea y cómo interactúan los materiales a nivel molecular y atómico. Desde la elaboración de medicamentos hasta la creación de nuevos materiales y tecnologías, la química está presente en todas las áreas de la vida moderna y es fundamental para el desarrollo de la sociedad.</p>
+                </article>
+              </div>
+
+              <!--VIDEO 2-->
+              <div class="col">
+                <video class="fm-video video-js vjs-16-9 vjs-big-play-centered" controls data-setup="{}" id="fm-video">
+				
+                    <source src="videos/video2.mp4" type="video/mp4">
+                </video>
+        
+                <article>
+                    <h2>Bloque 2</h2>
+                    <p>La materia y la energía están íntimamente relacionadas. La materia puede ser transformada en energía y la energía puede ser convertida en materia. Esta interconexión se expresa a través de la ecuación E=mc², propuesta por Einstein, que describe la equivalencia entre masa y energía.</p>
+                </article>
+              </div>
+
+              <!--VIDEO 3-->
+              <div class="col">
+                <video class="fm-video video-js vjs-16-9 vjs-big-play-centered" controls data-setup="{}" id="fm-video">
+				
+                    <source src="videos/video3.mp4" type="video/mp4">
+                </video>
+        
+                <article>
+                    <h2>Bloque 3</h2>
+                    <p>El modelo atómico es una representación simplificada de la estructura interna del átomo, compuesto por un núcleo central formado por protones y neutrones, rodeado por electrones que orbitan en capas específicas. Este modelo es crucial para comprender cómo los átomos interactúan entre sí y con otras sustancias, y tiene aplicaciones en áreas como la física, la química, la ingeniería de materiales y la medicina nuclear.</p>
+                </article>
+              </div>
+
+              <!--VIDEO 4-->
+              <div class="col">
+                <video class="fm-video video-js vjs-16-9 vjs-big-play-centered" controls data-setup="{}" id="fm-video">
+				
+                    <source src="videos/video4.mp4" type="video/mp4">
+                </video>
+        
+                <article>
+                    <h2>Bloque 4</h2>
+                    <p>a tabla periódica es una herramienta fundamental para la química y otras ciencias naturales, que organiza y clasifica los elementos químicos según su estructura atómica y propiedades químicas. Esta tabla permite predecir y entender las propiedades de los elementos y sus compuestos, y es útil para el diseño y síntesis de nuevos materiales y productos químicos.</p>
+                </article>
+              </div>
+
+              <!--VIDEO 5-->
+              <div class="col">
+                <video class="fm-video video-js vjs-16-9 vjs-big-play-centered" controls data-setup="{}" id="fm-video">
+				
+                    <source src="videos/video5.mp4" type="video/mp4">
+                </video>
+        
+                <article>
+                    <h2>Bloque 5</h2>
+                    <p>Los enlaces químicos son las fuerzas que mantienen juntos a los átomos en una molécula o compuesto químico. Estos enlaces pueden ser covalentes, iónicos o metálicos, y son esenciales para determinar las propiedades químicas y físicas de las sustancias. Las interacciones intermoleculares, por otro lado, son las fuerzas que actúan entre moléculas y son responsables de la forma en que las moléculas se organizan en fases sólidas, líquidas o gaseosas.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+	</main>
+
+	<script>
+		var reproductor = videojs('fm-video', {
+			fluid: true
+		});
+	</script>
+
+    <!-- FOOTER -->
+    <%- include("../partials/footer") %>
+</body>
+</html>

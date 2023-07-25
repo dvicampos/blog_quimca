@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <%- include("../partials/head") %>
+</head>
+    <body>
+        <%- include("../partials/header") %>
+        <div class="container">
+            <div class="row">
+                <section class="main col-md-12">
+                    <div class="row titulo-seccion">
+                        <div class="col-md-12">
+                            <h3>Juegos</h3>
+                            <img src="img/l1.jpeg" width="100px">
+                        </div>
+                    </div>
+                
+                    <section class="row posts">
+                        <article class="col-sm-6 post">
+                            <div class="contenedor">
+                                <div class="thumb">
+                                    <a href="#"><img src="img/Qui_Herra_Vida.jpg" width="700" alt=""></a>
+                                </div>
+                                <div class="info">
+                                    <h2 class="titulo"><a href="#">Elementos quimicos</a></h2>
+                                    <p class="fecha">Juego de ahorcado</p>
+                                    <p class="extracto">En este juego puedes poner en practica tus conocimientos sobre los diferentes elementos fisicos en la tabla periodica.</p>
+                                    <div class="categorias">
+                                        <a href="/ahorcado">Juego</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>  
+
+                        <article class="col-sm-6 post">
+                            <div class="contenedor">
+                                <div class="thumb">
+                                    <a href="#"><img src="img/materia_energia.jpg" width="700" alt=""></a>
+                                </div>
+                                <div class="info">
+                                    <h2 class="titulo"><a href="#">Quimica general</a></h2>
+                                    <p class="fecha">Juego de quiz</p>
+                                    <p class="extracto">Este juego sera un quiz para asi poner a prueba tus conocimientos de los diversos temas de quimica.</p>
+                                    <div class="categorias">
+                                        <a href="/quiz">Juego</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="col-sm-6 post">
+                            <div class="contenedor">
+                                <div class="thumb">
+                                    <a href="#"><img src="img/materia_energia.jpg" width="700" alt=""></a>
+                                </div>
+                                <div class="info">
+                                    <h2 class="titulo"><a href="#">Modelos atomicos</a></h2>
+                                    <p class="fecha">Juego de memoria</p>
+                                    <p class="extracto">En este juego tendras como reto elegir la imagen del modelo atomico con su nombre respectivo</p>
+                                    <div class="categorias">
+                                        <a href="/memoria">Juego</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </section>
+                </section>        
+            </div>
+        </div>
+
+    <!-- FOOTER -->
+    <%- include("../partials/footer") %>
+    </body>
+</html>

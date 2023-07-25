@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <%- include("../partials/head") %>
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+    }
+    .contenedorquiz{
+        max-width: 700px;
+        margin: auto;
+        padding: 20px;
+    }
+    section{
+        border: 2px solid #5624d0;
+        border-radius: 7px;
+        padding: 10px;
+        margin: 10px 0;
+    }
+    label{
+        display: block;
+        padding: 7px;
+        border-radius: 7px;
+        cursor: pointer;
+        border: 1px dashed #ccc;
+        margin-bottom: 3px;
+    }
+    label:hover{
+        background: #cec0fc;
+    }
+    button{
+        width: 80%;
+        display: block;
+        margin: auto;
+        padding: 10px;
+
+        background-color: #74d7c8;
+        border: none;
+        cursor: pointer;
+        border-radius: 20px;
+    }
+    button:hover{
+        background: #000;
+        color: #fff;
+    }
+    h2{
+        text-align: center;
+    }
+    #resultado{
+        font-size: 30px;
+        color: darkred;
+    }
+</style>
+    <body>
+        <%- include("../partials/header") %>
+        <h1>QUIZ BLOQUE 1</h1>
+        <p>Juego de Quimica</p>
+
+        <div class="contenedorquiz">
+            <section id="p0">
+                <h3>¿Cómo identificamos la importancia de esta ciencia en nuestro entorno?</h3>
+                <label>
+                    <input type="radio" value="1" name="p0" onclick="respuesta(0,this)">Consiste en comparar algunos productos o procesos que usamos actualmente
+                </label>
+                <label>
+                    <input type="radio" value="2" name="p0" onclick="respuesta(0,this)">La ropa, el calzado, los productos empleados para limpiar el cuerpo y la casa, etc.
+                </label>
+                <label>
+                    <input type="radio" value="3" name="p0" onclick="respuesta(0,this)">Tanto al usar un producto como al emplear una técnica
+                </label>
+            </section>
+
+            <section id="p1">
+                <h3>¿Qué problemas han tenido que resolver los seres humanos para su supervivencia?</h3>
+                <label>
+                    <input type="radio" value="1" name="p1" onclick="respuesta(1,this)">Preparar las señales, abastecerse de agua
+                </label>
+                <label>
+                    <input type="radio" value="2" name="p1" onclick="respuesta(1,this)">Procurarse un refugio, abastecerse de comida
+                </label>
+                <label>
+                    <input type="radio" value="3" name="p1" onclick="respuesta(1,this)">Conseguir comida, hallar un sitio seguro donde dormir, protegerse del frío o del calor
+                </label>
+            </section>
+
+            <section id="p2">
+                <h3>¿Qué es materia con respecto al concepto de química?</h3>
+                <label>
+                    <input type="radio" value="1" name="p2" onclick="respuesta(2,this)">Es la palabra genérica y abstracta que usamos para referirnos a todo lo que ocupa un lugar en el espacio
+                </label>
+                <label>
+                    <input type="radio" value="2" name="p2" onclick="respuesta(2,this)">Es aquello de lo que están hechas todas las cosas que nos rodean y sólo es perceptible con los sentidos, no es fácil relacionarla con los alimentos, ropa, calzado, medicinas y otros objetos
+                </label>
+                <label>
+                    <input type="radio" value="3" name="p2" onclick="respuesta(2,this)">Es prima y también es un recurso natural
+                </label>
+            </section>
+
+            <section id="p3">
+                <h3>¿En que se clasifican los materiales?</h3>
+                <label>
+                    <input type="radio" value="1" name="p3" onclick="respuesta(3,this)">Sólidos, brillantes, duros, fríos
+                </label>
+                <label>
+                    <input type="radio" value="2" name="p3" onclick="respuesta(3,this)">Según sus características específicas, en: metales, cerámicos, vidrios, fibras, plásticos, colorantes, granulares, magnéticos, semiconductores y biológicos
+                </label>
+                <label>
+                    <input type="radio" value="3" name="p3" onclick="respuesta(3,this)"> Si son conductores de electricidad y calor
+                </label>
+            </section>
+
+            <section id="p4">
+                <h3>¿Cuáles son los tipos de estudios más conocidos?</h3>
+                <label>
+                    <input type="radio" value="1" name="p4" onclick="respuesta(4,this)">Exploratorio, descriptivo, correlacional y explicativo
+                </label>
+                <label>
+                    <input type="radio" value="2" name="p4" onclick="respuesta(4,this)">Descriptivo, correlacional, documental y explicativo
+                </label>
+                <label>
+                    <input type="radio" value="3" name="p4" onclick="respuesta(4,this)">Exploratorio, correlacional y explicativo
+                </label>
+            </section>
+            <button onclick="corregir()">Corregir</button>
+            <h2>Cantidad <span id="resultado"></span></h2>
+        </div>
+
+        
+        <!-- FOOTER -->
+        <%- include("../partials/footer") %>
+
+        <script src="js/appQuiz1.js"></script>
+    </body>
+</html>

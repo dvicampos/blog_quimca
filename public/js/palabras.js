@@ -1,0 +1,2 @@
+// Palabras a usar en el ahorcado
+const words = ['Hidrogeno','Helio', 'Litio','Berilio','Boro','Carbono','Nitrogeno','Oxigeno','Fluor','Neon','Sodio','Magnecio','Aluminio','Silicio','Fosforo','Azufre','Cloro','Argon','Potasio','Calcio']
