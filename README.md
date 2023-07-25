@@ -1,5 +1,5 @@
-# Blog de temas principales en la quimica basica, con apartados de blog, archivos pdf y asi como videos
-
+# Blog de temas principales en la quimica basica, con apartados de blog, archivos pdf, juegos y asi como videos
+Tambien se cuenta con registro y login
 Muestra de la interfaz:
 ![image](https://github.com/dvicampos/blog_quimca/assets/107318970/d4a6e2ee-539b-4360-83af-6223114f4443)
 Seccion de login:
