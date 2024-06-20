@@ -14,7 +14,8 @@ app.use(express.static(join(__dirname, 'public')))
 
 //Login
 import mongoose from 'mongoose';
-mongoose.connect('mongodb+srv://dacam:ArNo0192@cluster0.qhe9clm.mongodb.net/auth?retryWrites=true&w=majority');
+// mongoose.connect('mongodb+srv://dacam:ArNo0192@cluster0.qhe9clm.mongodb.net/auth?retryWrites=true&w=majority');
+mongoose.connect('mongodb+srv://davecamp:R8dy0LYFUlCh54lp@cluster0.fdwpzyb.mongodb.net/miapp?retryWrites=true&w=majority');
 import Publicacion from './public/controllers/publicacion.controller.js';
 import { Auth, isAuthenticated } from './public/controllers/auth.controller.js';
 app.use(express.json())
